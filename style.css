@@ -457,9 +457,7 @@ a {
 
 /* Organizations Section */
 .organizations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+    justify-content: center;
 }
 
 .org-card {
@@ -535,10 +533,9 @@ a {
 
 /* Contact Section */
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    justify-content: center;
 }
+
 
 .contact-info {
     display: flex;

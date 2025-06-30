@@ -22,9 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typingText) {
         const texts = [
             "IT Specialist",
-            "Fullstack Developer",
-            "Problem Solver",
-            "Tech Enthusiast"
+            "Cyber Security",
+            "Frontend Developer",
         ];
         let textIndex = 0;
         let charIndex = 0;
@@ -78,13 +77,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Run once on load
     
-    // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            contactForm.reset();
-        });
-    }
-});
+    });
