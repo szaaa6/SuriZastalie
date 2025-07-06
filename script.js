@@ -1,11 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Init EmailJS
+    emailjs.init("82zL3PhXAorGW6ngj");
+
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        menuToggle.innerHTML = navLinks.classList.contains('active') ? 
+        menuToggle.innerHTML = navLinks.classList.contains('active') ?
             '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
@@ -32,9 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
         function type() {
             const currentText = texts[textIndex];
             const currentChar = currentText.substring(0, charIndex);
-            
+
             typingText.textContent = currentChar;
-            
+
             if (!isDeleting && charIndex < currentText.length) {
                 charIndex++;
                 setTimeout(type, 100);
@@ -55,13 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Scroll animations
     function handleScroll() {
         const scrollPosition = window.scrollY;
-        
+
         // Active nav link
         document.querySelectorAll('section').forEach(section => {
             const sectionTop = section.offsetTop - 100;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-            
+
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 document.querySelectorAll('.nav-link').forEach(link => {
                     link.classList.remove('active');
@@ -73,8 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize scroll events
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Run once on load
-    
-    });
+    handleScroll();
+
+    // EmailJS form submission
+    const contactForm = document.getElementById("contact-form");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.sendForm("service_t76aj0o", "template_a5hti7b", this)
+                .then(() => {
+                    document.getElementById("form-status").textContent = "Message sent successfully!";
+                    this.reset();
+                }, (error) => {
+                    document.getElementById("form-status").textContent = "Failed to send message.";
+                    console.error("EmailJS Error:", error);
+                });
+        });
+    }
+});
