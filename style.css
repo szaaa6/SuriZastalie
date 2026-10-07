@@ -389,6 +389,143 @@ a {
     text-align: center;
 }
 
+/* Internship Experience Section */
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent);
+}
+
+.experience-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.experience-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.experience-title-group h3 {
+    font-size: 1.6rem;
+    color: var(--light);
+    margin-bottom: 0.2rem;
+}
+
+.company-name {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.project-meta,
+.experience-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--secondary);
+    font-size: 0.9rem;
+}
+
+.project-meta span,
+.experience-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.experience-description {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.7;
+}
+
+.responsibilities-title,
+.contributions-title {
+    font-weight: 600;
+    color: var(--light);
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.responsibilities-title i,
+.contributions-title i {
+    color: var(--accent);
+}
+
+.experience-responsibilities,
+.project-contributions {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.experience-responsibilities li,
+.project-contributions li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.experience-responsibilities li::before,
+.project-contributions li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.experience-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.experience-tags span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--light);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 /* Projects Section */
 .projects-grid {
     display: grid;
@@ -844,5 +981,9 @@ footer {
     
     .hero-content {
         padding: 0 1rem;
+    }
+
+    .experience-card {
+        padding: 1.5rem;
     }
 }
